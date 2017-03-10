@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个咸鱼的博客">
+    <meta name="keyword" content="null">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="http://olqhuq6wn.bkt.clouddn.com/head.jpg">
+    <link rel="alternate" type="application/atom+xml" title="J1b0" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        隐写术个人总结｜J1b0&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://Emiyajibo.github.io/2017/03/10/隐写术个人总结/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('http://olqhuq6wn.bkt.clouddn.com/Gokou.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    J1b0
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://olqhuq6wn.bkt.clouddn.com/blog%E5%8D%9A%E6%96%87%E8%83%8C%E6%99%AF.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://olqhuq6wn.bkt.clouddn.com/blog%E5%8D%9A%E6%96%87%E8%83%8C%E6%99%AF.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>隐写术个人总结</h1>
+                    
+                    <span class="meta">
+                         作者 J1b0
+                        <span>
+                          日期 2017-03-10
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#CTF"
+                           title="CTF">CTF</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            隐写术个人总结
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h1><p>第一次接触到<code>隐写术</code> 是在<code>CTF(Capture The Flag)</code>中。【×当时的我比较震惊，原来很多信息都能隐藏在图片或者音频中。<br>隐写的种类和方式也很多，包括图片隐写和音频隐写。所以在这里汇总下到目前为止，我所遇到的各种隐写。<br>可能以后有更多没有遇见过的新姿势，到时候在慢慢补充吧ovo</p>
+<h1 id="0x01-图种"><a href="#0x01-图种" class="headerlink" title="0x01 图种"></a>0x01 图种</h1><p>所谓图种就是采用一种特殊的方式将图片文件与压缩文件结合起来。该文件一般保存形式是 <code>.jpg</code> 形式 并可以正常显示图片。<br>制作图种的方法也很简单 使用<code>copy</code>命令 ：<br>先制作一个<code>1.zip</code>，把想要隐藏的东西放进去，再需要一张jpg图片<code>2.jpg</code>，然后就可以执行一个命令<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">copy /b 2.jpg+1.zip output.jpg</div></pre></td></tr></table></figure></p>
+<p>当然想要获取里面的信息 只需要 把 <code>output.jpg</code> 后缀更变为 <code>.zip</code> 就可以看见藏在里面的东西了。<br><img src="http://olqhuq6wn.bkt.clouddn.com/%E9%9A%90%E5%86%99%E5%9B%BE%E7%A7%8D.jpg" alt="图种"><br>放一张我做好的图。</p>
+<h2 id="在这里我要介绍一个实用的工具-–-binwalk"><a href="#在这里我要介绍一个实用的工具-–-binwalk" class="headerlink" title="在这里我要介绍一个实用的工具 – binwalk"></a>在这里我要介绍一个实用的工具 – binwalk</h2><p><a href="http://144.dragonparking.com/?site=binwalk.org&amp;t=1489134453&amp;s=8e9bc13ebfe808df7474a8a4d180d3a7" title="binwalk" target="_blank" rel="external">binwalk</a>可以自动化的分析图片中附加的其他的文件，其原理就是检索匹配文件头，常用的一些文件头都可以被发现<br>以上图为例：<br><img src="http://olqhuq6wn.bkt.clouddn.com/binwalk-blog1.png" alt="binwalk"><br>从图中可以清晰的看见 该图片 分为 图片格式和压缩格式<br>PS:在Windows情况下，在CMD中是无法直接调用 binwalk的 所以我们需要对自己的电脑做一些配置 <a href="http://www.cnblogs.com/pcat/p/5256288.html" title="详细配置" target="_blank" rel="external">详细配置</a></p>
+<h2 id="实用工具2–Winhex"><a href="#实用工具2–Winhex" class="headerlink" title="实用工具2–Winhex"></a>实用工具2–Winhex</h2><p><a href="http://www.winhex.com/winhex/" title="Winhex" target="_blank" rel="external">Winhex</a>是一款实用的十六进制编辑器，可以用来检查和修复各种文件、恢复删除文件、硬盘损坏造成的数据丢失等。<br>同时它还可以让你看到其他程序隐藏起来的文件和数据。<br>直接用<code>winhex</code> 打开 图片<br><img src="http://olqhuq6wn.bkt.clouddn.com/winhex%E6%9F%A5%E7%9C%8B%E5%9B%BE%E5%83%8F.jpg" alt="winhex"><br>在<code>jpg</code>中结束符为<code>FF D9</code>，利用<code>winhex</code>可以看到正常的jpg结尾，而图片查看器会忽视jpg结束符之后的内容，所以我们附加的<code>zip</code>，自然也就不会影响到图像的正常显示。</p>
+<h1 id="0x02-数据修改"><a href="#0x02-数据修改" class="headerlink" title="0x02 数据修改"></a>0x02 数据修改</h1><p>上面说到的隐藏方式，是利用了增加数据的方式，把数据直接增加在了<code>jpg</code>后面。还有另一类隐藏的方法，就是利用了修改数据的方式来隐藏自己传递的信息。</p>
+<h2 id="LSB隐写"><a href="#LSB隐写" class="headerlink" title="LSB隐写"></a>LSB隐写</h2><p><code>LSB</code>也就是<code>最低有效位 (Least Significant Bit)</code>。原理就是图片中的像数一般是由三种颜色组成，即三原色，由这三种原色可以组成其他各种颜色。<br>例如在<code>PNG图片</code>的储存中，每个颜色会有 8bit，LSB隐写就是修改了像数中的最低的1bit，在人眼看来是看不出来区别的，也把信息隐藏起来了。<br>如果是要寻找这种LSB隐藏痕迹的话，有一个工具是个神器–<a href="https://www.baidu.com/link?url=ZdIaqxzFUNup-X56OTSXkzEFA3KLU6DPbW3kSW1A0sG_cPeJxKWSQRpvI56Ujy-V1U41YA2XirLhPMsDCN1Jva&amp;wd=&amp;eqid=e95e3b6c000244090000000558c261f0" title="Stegsolve" target="_blank" rel="external">Stegsolve</a></p>
+<p><strong>☆这里要先感谢下 <a href="http://appleu0.sinaapp.com/?p=501" title="AppLeU0巨聚" target="_blank" rel="external">AppLeU0巨聚</a> 提供的素材图☆</strong></p>
+<p>附上原图<br><img src="http://olqhuq6wn.bkt.clouddn.com/lsb.png" alt="原图"></p>
+<p>打开之后，使用<code>Stegsolve——Analyse——Frame Browser</code>这个可以浏览三个颜色通道中的每一位，可以在红色通道的最低位，发现一个二维码，然后可以扫描得到结果。<br><img src="http://olqhuq6wn.bkt.clouddn.com/LSB%E9%9A%90%E5%86%99%E4%BE%8B%E5%AD%901.png" alt="RED最低位"></p>
+<h2 id="Ps"><a href="#Ps" class="headerlink" title="Ps:"></a>Ps:</h2><p>1.如果是 隐写的使用了<code>ascii</code>的话，可以使用<code>Stegsolve——Analyse——Data Extract</code>来查看<code>ascii码</code><br>2.这种方法只适用于<code>png图片</code>如果是像之前的<code>jpg图片</code>的话就是不行的，原因是<code>jpg图片</code>对像数进行了有损的压缩，你修 改的信息可能会被压缩的过程破坏。而<code>PNG</code>图片虽然也有压缩，但却是无损的压缩，这样子可以保持你修改的信息得到正确的表达，不至于丢失。<code>BMP</code>的图片也 是一样的，是没有经过压缩的，可以发现<code>BMP</code>图片是特别的大的，因为<code>BMP</code>把所有的像数都按原样储存，没有压缩的过程。</p>
+<h1 id="0x03-关于动图"><a href="#0x03-关于动图" class="headerlink" title="0x03 关于动图"></a>0x03 关于动图</h1><p>隐写术在CTF中出现时，常常会和加解密结合起来一起出现，或者是一些编码方式一起出现，以提高题目的 难度。<br>这里记录一下关于<code>.git</code>图片的相关知识<br>有的时候，会需要我们去修复图片，这对我们对于图片的文件结构要有了解。找到gif的文件格式，然后对照 这个破损的文件。<a href="http://dev.gameres.com/Program/Visual/Other%20/GIFDoc.htm" title="Gif的图片格式文档" target="_blank" rel="external">Gif的图片格式文档</a></p>
+<h1 id="0x04-编程辅助"><a href="#0x04-编程辅助" class="headerlink" title="0x04 编程辅助"></a>0x04 编程辅助</h1><p>同样是对于<code>.png</code>格式的图片 倘若用之前的LSB看没有什么问题的话， 可以看下图片的结构发现有没有问题。<br>有的图片 在<code>IDAT</code> 块中会出现异常 正常的块的<code>length</code>是在<code>65524</code> 如果在实际情况中出现不是<code>65524</code>那就说明出现了问题<br>可以用<code>Winhex</code> 打开图片 观察<code>IDAT</code>的数据块<br>1.若为<code>78 9C</code> 开头 - 则为<code>zlib</code>压缩<br>PS：数据块前面的4字节是长度 然后是标志位IDAT 然后开始是数据，直到<code>D9 CF A5 A8</code>是crc32校验位<br>附上zlib_decode:<br><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> zlib</div><div class="line"><span class="keyword">import</span> binascii</div><div class="line">IDAT = <span class="string">"your_code"</span>.decode(<span class="string">'hex'</span>)</div><div class="line">result = binascii.hexlify(zlib.decompress(IDAT))</div><div class="line"><span class="keyword">print</span> result.decode(<span class="string">'hex'</span>)</div></pre></td></tr></table></figure></p>
+<p>解码之后是0和1<br>1.个数为平方数 - 二维码<br>附脚本<br><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Image</div><div class="line">max = your_number^<span class="number">1</span>/<span class="number">2</span>   <span class="comment">#个数的平方根</span></div><div class="line">pic = Image.new(<span class="string">"RGB"</span>,(max,max))   <span class="comment">#创建一个新的空白正方形</span></div><div class="line">str = <span class="string">"your_decode_number"</span></div><div class="line">i = <span class="number">0</span> </div><div class="line"><span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">0</span>,max):</div><div class="line">	<span class="keyword">for</span> x <span class="keyword">in</span> range (<span class="number">0</span>,max):</div><div class="line">		<span class="keyword">if</span>(str[i] == <span class="string">'1'</span>):</div><div class="line">			pic.putpixel([x,y],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))</div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			pic.putpixel([x,y],(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>))</div><div class="line">		i =i + <span class="number">1</span></div><div class="line">pic.show()</div><div class="line">pic.save(<span class="string">"flag.png"</span>)</div></pre></td></tr></table></figure></p>
+<h1 id="0x05-后记"><a href="#0x05-后记" class="headerlink" title="0x05 后记"></a>0x05 后记</h1><p>这里简单的记录一下 简单的隐写姿势，以后要是遇到什么新的姿势 在慢慢补充吧….(:з」∠) </p>
+
+                <hr>
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                     style="text-align: right"
+                     data-thread-key="2017/03/10/隐写术个人总结/"
+                     data-title="隐写术个人总结"
+                     data-url="http://Emiyajibo.github.io/2017/03/10/隐写术个人总结/"
+                     data-images=""
+                     data-content="0x00 前言第一次接触到隐写术 是在CTF(Capture The Flag)中。【×当时的... | J1b0&#39;s blog ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/03/10/Windows-hexo-github搭建个人博客/" data-toggle="tooltip" data-placement="top"
+                           title="Windows+hexo+github搭建个人博客">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2017/03/10/隐写术个人总结/"
+                         data-title="隐写术个人总结"
+                         data-url="http://Emiyajibo.github.io/2017/03/10/隐写术个人总结/">
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x00-前言"><span class="toc-text">0x00 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-图种"><span class="toc-text">0x01 图种</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在这里我要介绍一个实用的工具-–-binwalk"><span class="toc-text">在这里我要介绍一个实用的工具 – binwalk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用工具2–Winhex"><span class="toc-text">实用工具2–Winhex</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-数据修改"><span class="toc-text">0x02 数据修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LSB隐写"><span class="toc-text">LSB隐写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ps"><span class="toc-text">Ps:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x03-关于动图"><span class="toc-text">0x03 关于动图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-编程辅助"><span class="toc-text">0x04 编程辅助</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x05-后记"><span class="toc-text">0x05 后记</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#CTF"
+                           title="CTF">CTF</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="heartsky.info">heartsky</a></li>
+                        
+                        <li><a href="c014.cn">c014</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'J1b0';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/J1b0">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/J1b0">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/EmiYaJiBO">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Emiyajibo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; J1b0 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://Emiyajibo.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://olqhuq6wn.bkt.clouddn.com/Gokou.jpg">
+</body>
+
+</html>
